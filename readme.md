@@ -16,6 +16,9 @@
       ? N
       : "";
    type PercentageParser<S extends string> = [parsePlusMinus<S>, parseNum<S>, parsePercent<S>];
+
+   //
+   type R2 = PercentageParser<"+85%">;
   ```
  - 불필요한 infer는 any로 대체 가능하다.
  - never타입은 타입 할달 불가하며 이를 위해 타입을 []로 감쌀 필요가 있다.
