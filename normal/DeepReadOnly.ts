@@ -1,6 +1,6 @@
 type DeepReadOnly<T> = {
     //T[P]가 Record<string, unknown> = object를 상속한 경우 재귀처리
-    readonly [P in keyof T]: T[P] extends Record<string, unknown> ? DeepReadOnly<T[P]> : T[P];
+    readonly [P in keyof T]: T[P] extends {} ? DeepReadOnly<T[P]> : T[P];
 }
 
 
